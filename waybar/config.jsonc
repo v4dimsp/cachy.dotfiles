@@ -1,0 +1,57 @@
+{
+  "position": "top",
+  "output": "DP-1",
+  "spacing": 2,
+  "modules-left": ["hyprland/window"],
+  "modules-center": ["hyprland/workspaces"],
+  "modules-right": ["tray", "network", "clock"],
+
+  "hyprland/workspaces": {
+    "format": "{icon}",
+    "format-icons": {
+      "active": "󰮯",
+      "default": "󰊠",
+      "empty": "󰊠",
+    },
+  },
+
+  "hyprland/window": {
+    "format": "󰖯  {title}",
+    "max-length": 50,
+    "separate-outputs": true,
+    "rewrite": {
+      "": "",
+    },
+  },
+
+  "custom/alsamixer": {
+    "exec": "amixer get Master | awk -F'[]%[]' '/%/ {if ($7 == \"off\") {print \"MM\"} else {print $2}}'",
+    "format": "Vol: {}%",
+    "interval": 1,
+    "on-click": "kitty -e alsamixer",
+  },
+
+  "tray": {
+    "icon-size": 16,
+    "spacing": 8,
+    "show-passive-items": true,
+  },
+
+  "network": {
+    "format-wifi": "<span size='large'>󰤨</span>  {essid}",
+    "format-ethernet": "<span size='large'>󰈀</span>  {ipaddr}",
+    "format-linked": "<span size='large'>󱘖</span>  {ifname}",
+    "format-disconnected": "<span size='large'>󰤭</span>  offline",
+    "format-alt": "<span size='large'>󰤨</span>  {signalStrength}%",
+    "tooltip-format": "󰤨  {essid}\n󰕒  UP: {bandwidthUpBytes}\n󰇚  DOWN: {bandwidthDownBytes}",
+    "interval": 1,
+  },
+
+  "clock": {
+    "interval": 1,
+    "timezone": "Europe/Madrid",
+    "format": "<span size='large'>󰥔</span>  {:%H:%M:%S}",
+    "tooltip": true,
+    "tooltip-format": "󰃭  {:%Y / %m / %d}",
+  },
+}
