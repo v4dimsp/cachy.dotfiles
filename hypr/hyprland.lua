@@ -2,12 +2,17 @@ require('animations')
 require('display')
 require('keybinds')
 
+-- kcmshell6 kcm_bluetooth launch bluetooth settings
+
 hl.env("HYPRSHOT_DIR", os.getenv("HOME") .. "/Imágenes")
 
 -- ENVIROMENT start apps
 hl.on("hyprland.start", function ()
+    hl.exec_cmd("/usr/lib/polkit-kde-authentication-agent-1")
+    hl.exec_cmd("bluetoothctl")
     hl.exec_cmd("keepassxc")
     hl.exec_cmd("waypaper --restore")
+    hl.exec_cmd("waybar")
 end)
 
 -- See https://wiki.hypr.land/Configuring/Advanced-and-Cool/Environment-variables/
@@ -96,7 +101,8 @@ hl.config({
 hl.config({
     misc = {
         force_default_wallpaper = -1,    -- Set to 0 or 1 to disable the anime mascot wallpapers
-        disable_hyprland_logo   = false, -- If true disables the random hyprland logo / anime girl background. :(
+        disable_hyprland_logo   = true, -- If true disables the random hyprland logo / anime girl background. :(
+        initial_workspace_tracking = 2,
     },
 })
 
