@@ -34,12 +34,23 @@ window#waybar.empty #window {
 #network,
 #pulseaudio,
 #tray,
-#window {
+#window,
+#custom-archlogo {
   padding: 5px 16px;
   margin: 2px 5px;
   border-radius: 14px;
   color: #1e2030;
   transition: all 0.2s ease;
+}
+
+#custom-archlogo {
+  background: #1793d1;
+  font-size: 20px;
+  padding: 2px 18px 2px 14px;
+}
+
+#custom-archlogo:hover {
+  background: #1a9ee3;
 }
 
 #clock {

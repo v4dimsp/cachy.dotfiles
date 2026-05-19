@@ -2,7 +2,7 @@
   "position": "top",
   "output": "DP-1",
   "spacing": 2,
-  "modules-left": ["hyprland/window"],
+  "modules-left": ["custom/archlogo", "hyprland/window"],
   "modules-center": ["hyprland/workspaces"],
   "modules-right": ["tray", "network", "clock"],
 
@@ -13,6 +13,10 @@
       "default": "󰊠",
       "empty": "󰊠",
     },
+  },
+
+  "custom/archlogo": {
+    "format": "󰣇",
   },
 
   "hyprland/window": {
